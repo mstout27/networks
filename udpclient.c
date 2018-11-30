@@ -98,6 +98,11 @@ int main(void) {
 	server_addr.sin_port = htons(server_port);
 	
 /* --------------------------------------------------------------------------- */
+   char input[10000]; 
+    
+   printf("Enter filename to use as input: ");
+ 	 scanf("%s", input);
+	
   
   struct Packet{
 		short count;
@@ -105,7 +110,7 @@ int main(void) {
 		char data[80];
 	};
 
-	FILE* fp = fopen("test2.txt", "r");
+	FILE* fp = fopen(input, "r");
 	size_t len = 80;
 	char line[STRING_SIZE]; 
 	ssize_t read;

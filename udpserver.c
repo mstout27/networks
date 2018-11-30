@@ -106,13 +106,14 @@ int main(void) {
 	/* user configuration interface */
 	double packetLossRate;
 	double ACKLossRate;
-	
+ 
 	printf("Enter value for Packet Loss Rate (between 0 and 1): ");
 	scanf("%lf", &packetLossRate);
 	
 	printf("Enter value for ACK Loss Rate (between 0 and 1): ");
 	scanf("%lf", &ACKLossRate);
-	
+ 
+
     /* Stop and Wait protocol logic */
    
   struct Packet sentPacket;
@@ -170,7 +171,6 @@ int main(void) {
           printf("recvPacket.data = %s\n",recvPacket.data);
           
   				fprintf(fp, "%s\n", recvPacket.data);
-          //fputs(recvPacket.data,(FILE*)fp);
 					curr_seqNum = recvPacket.seqNum;
 					
 					
