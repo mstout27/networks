@@ -159,31 +159,33 @@ int main(void) {
 		memcpy(sendPacket.data,line,sendPacket.count-1);
    
 
-		/*send packet */
-		htons(sendPacket.count);
-		htons(sendPacket.seqNum);
+		
    
-		bytes_sent = sendto(sock_client, (char*)&sendPacket, sendPacket.count+4, 0,(struct           sockaddr *) &server_addr, sizeof (server_addr));
-    printf("\nData is: %s\n",sendPacket.data);
-		printf("Count is: %d\n",sendPacket.count);
-		printf("SeqNum is: %d\n",sendPacket.seqNum);
-		printf("size of data is: %d\n",bytes_sent);
-    packetTotal++;
-   
-    if(retransmit){
-      printf("Packet %d retransmitted with %d data bytes\n", sendPacket.seqNum, bytes_sent);
-      retransmitTotal++;
-      retransmit = 0;
-    } 
-    else{
-		  printf("Packet %d transmitted with %d data bytes\n", sendPacket.seqNum, bytes_sent);  
-		  countSum += sendPacket.count;
-		}
-   
+		
 		/* Wait for ACK, or timeout */
     
 		while(1){
-			
+       /*send packet */
+		  htons(sendPacket.count);
+		  htons(sendPacket.seqNum);
+     
+			bytes_sent = sendto(sock_client, (char*)&sendPacket, sendPacket.count+4, 0,(struct           sockaddr *) &server_addr, sizeof (server_addr));
+      printf("\nData is: %s\n",sendPacket.data);
+		  printf("Count is: %d\n",sendPacket.count);
+		  printf("SeqNum is: %d\n",sendPacket.seqNum);
+		  printf("size of data is: %d\n",bytes_sent);
+      packetTotal++;
+   
+      if(retransmit){
+        printf("Packet %d retransmitted with %d data bytes\n", sendPacket.seqNum, bytes_sent);
+        retransmitTotal++;
+        retransmit = 0;
+      } 
+      else{
+		    printf("Packet %d transmitted with %d data bytes\n", sendPacket.seqNum, bytes_sent);  
+		    countSum += sendPacket.count;
+		  }
+   
       
       /* Create timeout */
 			struct timeval timeout;
@@ -204,7 +206,7 @@ int main(void) {
 				timeoutTotal++;
 				printf("Timeout expired for packet numbered %d\n", sendPacket.seqNum);			
         retransmit = 1;
-				break;
+				
 			}
 			
 			/* no timeout, ACK received */
