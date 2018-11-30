@@ -131,7 +131,7 @@ int main(void) {
   FILE *fp;
   fp = fopen("output.txt", "w");
  
-    while(!exit) {
+ while(!exit) {
 		
 		bytes_recd = recvfrom(sock_server, (char *)&recvPacket, sizeof(recvPacket), 0, (struct sockaddr *)&client_addr, &client_addr_len);
 		ntohs(recvPacket.count);
@@ -167,8 +167,10 @@ int main(void) {
 					countSum += recvPacket.count;
                    
 					/* add data to output & update sequence number */
-  				//fprintf(fp, "%s", recvPacket.data);
-          fputs(recvPacket.data,(FILE*)fp);
+          printf("recvPacket.data = %s\n",recvPacket.data);
+          
+  				fprintf(fp, "%s\n", recvPacket.data);
+          //fputs(recvPacket.data,(FILE*)fp);
 					curr_seqNum = recvPacket.seqNum;
 					
 					

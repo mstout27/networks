@@ -143,19 +143,17 @@ int main(void) {
 	while(1){
     
 		/* Make packet to transmit */
-	   memset(&sendPacket.data,'\0', STRING_SIZE);
-   
+    memset(sendPacket.data,'\0', len);
+    memset(recvPacket.data,'\0',len);
+    
     if(!fgets(line,len,(FILE*)fp)){
-      
       break;
     }
     
 		sendPacket.count = strlen(line);
 		memcpy(sendPacket.data,line,sendPacket.count-1);
    
-    
-		
-		
+
 		/*send packet */
 		htons(sendPacket.count);
 		htons(sendPacket.seqNum);
@@ -177,16 +175,10 @@ int main(void) {
 		  countSum += sendPacket.count;
 		}
    
-    
-    
-		
 		/* Wait for ACK, or timeout */
     
 		while(1){
 			
-      
-      
-      
       
       /* Create timeout */
 			struct timeval timeout;
