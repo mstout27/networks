@@ -100,7 +100,6 @@ int main(void) {
    client_addr_len = sizeof (client_addr);
 /*-------------------------------------------------------------------------*/
 	
-	
 	/* user configuration interface */
 	double packetLossRate;
 	double ACKLossRate;
@@ -110,7 +109,6 @@ int main(void) {
 	
 	printf("Enter value for ACK Loss Rate (between 0 and 1): ");
 	scanf("%lf", &ACKLossRate);
- 
 
     /* Stop and Wait protocol logic */
    
@@ -165,11 +163,9 @@ int main(void) {
 					countSum += recvPacket.count;
                    
 					/* add data to output & update sequence number */
-          printf("recvPacket.data = %s\n",recvPacket.data);
           
   				fprintf(fp, "%s\n", recvPacket.data);
 					curr_seqNum = recvPacket.seqNum;
-					
 					
 					/* Possibly simulate ACK loss */
 					if(!simulateACKLoss(ACKLossRate)){

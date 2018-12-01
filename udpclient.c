@@ -103,7 +103,6 @@ int main(void) {
    printf("Enter filename to use as input: ");
  	 scanf("%s", input);
 	
-  
   struct Packet{
 		short count;
 		short seqNum;
@@ -166,10 +165,6 @@ int main(void) {
 		  htons(sendPacket.seqNum);
      
 			bytes_sent = sendto(sock_client, (char*)&sendPacket, sendPacket.count+4, 0,(struct           sockaddr *) &server_addr, sizeof (server_addr));
-      printf("\nData is: %s\n",sendPacket.data);
-		  printf("Count is: %d\n",sendPacket.count);
-		  printf("SeqNum is: %d\n",sendPacket.seqNum);
-		  printf("size of data is: %d\n",bytes_sent);
       packetTotal++;
    
       if(retransmit){
@@ -231,7 +226,7 @@ int main(void) {
 	printf("Number of data packets transmitted (initial transmit only): %d \n",packetTotal - retransmitTotal);
 	printf("Total number of data bytes transmitted: %d \n",countSum);
 	printf("Total number of retransmissions: %d \n", retransmitTotal);
-	printf("Total number of data packets received: %d \n", packetTotal + retransmitTotal);
+	printf("Total number of data packets received: %d \n", packetTotal);
 	printf("Number of ACKs received: %d \n", ACKTotal);
 	printf("Count of how many timeouts occurred: %d \n", timeoutTotal);
 	
