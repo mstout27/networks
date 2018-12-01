@@ -97,7 +97,7 @@ int main(void) {
                                     server_hp->h_length);
 	server_addr.sin_port = htons(server_port);
 	
-/* --------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------- */
    char input[10000]; 
     
    printf("Enter filename to use as input: ");
@@ -128,8 +128,8 @@ int main(void) {
     scanf("%lf", &timeout);
 	/* Define timeout */
  
-	int seconds = (int)timeout;
-	int microseconds = (int)((timeout - (double)seconds)*1000000);
+  int microseconds = (int)timeout;
+	int seconds = (int)((timeout - (double)microseconds)*1000000);
 	
 	/* Stop and Wait protocol logic */
 	int recvACK = 1;
@@ -157,10 +157,6 @@ int main(void) {
     
 		sendPacket.count = strlen(line);
 		memcpy(sendPacket.data,line,sendPacket.count-1);
-   
-
-		
-   
 		
 		/* Wait for ACK, or timeout */
     
@@ -191,7 +187,7 @@ int main(void) {
 			struct timeval timeout;
 			timeout.tv_sec = seconds;
 			timeout.tv_usec = microseconds;
-			setsockopt(sock_client, SOL_SOCKET, SO_RCVTIMEO, (const void *) &timeout, sizeof(timeout));
+			setsockopt(sock_client, SOL_SOCKET, SO_RCVTIMEO, (const void *)&timeout, sizeof(timeout));
 			
 			/* get ACK from server */
 
@@ -229,10 +225,10 @@ int main(void) {
 	htons(sendPacket.count);
 	htons(sendPacket.seqNum);
 	bytes_sent = sendto(sock_client, (struct Packet*)&sendPacket, sendPacket.count+4, 0,(struct sockaddr *) &server_addr, sizeof (server_addr));
-	printf("\nEnd of Transmission Packet with sequence number %d transmitted with %d data bytes\n\n", sendPacket.seqNum, sendPacket.count);
+	printf("\nEnd of Transmission Packet with sequence number %d transmitted with %d data bytes\n\n", sendPacket.seqNum, 0);
 	
 	/* Print sender statistics */
-	printf("Number of data packets transmitted (initial transmit only): %d \n",packetTotal);
+	printf("Number of data packets transmitted (initial transmit only): %d \n",packetTotal - retransmitTotal);
 	printf("Total number of data bytes transmitted: %d \n",countSum);
 	printf("Total number of retransmissions: %d \n", retransmitTotal);
 	printf("Total number of data packets received: %d \n", packetTotal + retransmitTotal);

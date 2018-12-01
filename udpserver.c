@@ -37,10 +37,8 @@ int simulateACKLoss(double ACKLossRate){
 	}
 	else{
 		return 1;
-	}
-	
+	}	
 }
-
 
 int main(void) {
   srand (time(NULL));
@@ -138,10 +136,9 @@ int main(void) {
 		ntohs(recvPacket.count);
 		ntohs(recvPacket.seqNum);
 		
-		
 		/* End Of Transmission: exit loop */
 		if(!recvPacket.count){
-			printf("\nEnd of Transmission Packet with sequence number %d received with %d data bytes\n", recvPacket.seqNum, bytes_recd);
+			printf("\nEnd of Transmission Packet with sequence number %d received with %d data bytes\n", recvPacket.seqNum, 0);
 			exit = 1;
 		}
 		
@@ -196,7 +193,6 @@ int main(void) {
 				lossSum++;
 			}
 		}
-		
    }  
    
 	/* Print receiver statistics */
