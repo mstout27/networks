@@ -106,11 +106,11 @@ int main(void) {
   struct Packet{
 		short count;
 		short seqNum;
-		char data[80];
+		char data[88];
 	};
 
 	FILE* fp = fopen(input, "r");
-	size_t len = 80;
+	size_t len = 88;
 	char line[STRING_SIZE]; 
 	ssize_t read;
 	

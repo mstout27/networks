@@ -47,7 +47,7 @@ int main(void) {
 	struct Packet{
 		short count;
 		short seqNum;
-		char data[80];
+		char data[88];
 	};
 	
    int sock_server;  /* Socket on which server listens to clients */
