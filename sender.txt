@@ -1,38 +1,21 @@
-Script started on Wed 28 Nov 2018 10:48:58 PM EST
-brivamc@cisc450:~/proj2$ make clean
-rm tcpclient tcpserver udpclient udpserver
-brivamc@cisc450:~/proj2$ ls -l
-total 30
--rw-r--r-- 1 brivamc brivamc  342 Nov 26 18:11 Makefile
--rw-rw-r-- 1 brivamc brivamc    0 Nov 28 22:48 output.txt
--rw-rw-r-- 1 brivamc brivamc    0 Nov 28 22:48 sender.txt
--rw-r--r-- 1 brivamc brivamc 5501 Nov 26 18:11 tcpclient.c
--rw-r--r-- 1 brivamc brivamc 7943 Nov 26 18:11 tcpserver.c
--rw-r--r-- 1 brivamc brivamc 1777 Nov 26 18:11 test1.txt
--rw-r--r-- 1 brivamc brivamc 3435 Nov 26 18:11 test2.txt
--rw-r--r-- 1 brivamc brivamc 7635 Nov 28 22:46 udpclient.c
--rw-r--r-- 1 brivamc brivamc 6667 Nov 28 22:44 udpserver.c
-brivamc@cisc450:~/proj2$ make
-/usr/bin/gcc tcpclient.c -o tcpclient
-/usr/bin/gcc tcpserver.c -o tcpserver
-/usr/bin/gcc udpclient.c -o udpclient
-/usr/bin/gcc udpserver.c -o udpserver
-brivamc@cisc450:~/proj2$ ls -l
-total 32
--rw-r--r-- 1 brivamc brivamc   342 Nov 26 18:11 Makefile
--rw-rw-r-- 1 brivamc brivamc     0 Nov 28 22:48 output.txt
--rw-rw-r-- 1 brivamc brivamc     0 Nov 28 22:48 sender.txt
--rwxrwxr-x 1 brivamc brivamc 13452 Nov 28 22:49 tcpclient
--rw-r--r-- 1 brivamc brivamc  5501 Nov 26 18:11 tcpclient.c
--rwxrwxr-x 1 brivamc brivamc 13326 Nov 28 22:49 tcpserver
--rw-r--r-- 1 brivamc brivamc  7943 Nov 26 18:11 tcpserver.c
--rw-r--r-- 1 brivamc brivamc  1777 Nov 26 18:11 test1.txt
--rw-r--r-- 1 brivamc brivamc  3435 Nov 26 18:11 test2.txt
--rwxrwxr-x 1 brivamc brivamc 13664 Nov 28 22:49 udpclient
--rw-r--r-- 1 brivamc brivamc  7635 Nov 28 22:46 udpclient.c
--rwxrwxr-x 1 brivamc brivamc 13726 Nov 28 22:49 udpserver
--rw-r--r-- 1 brivamc brivamc  6667 Nov 28 22:44 udpserver.c
-brivamc@cisc450:~/proj2$ cat test2.txt 
+Script started on Sun 02 Dec 2018 11:19:28 AM EST
+mstout@cisc450:~/networks$ ls -l
+total 58
+-rw-rw-r-- 1 mstout mstout   342 Nov 30 16:55 Makefile
+-rw-rw-r-- 1 mstout mstout     0 Dec  2 11:19 output.txt
+-rw-rw-r-- 1 mstout mstout     0 Dec  2 11:18 receiver.txt
+-rw-rw-r-- 1 mstout mstout     0 Dec  2 11:19 sender.txt
+-rwxrwxr-x 1 mstout mstout 13452 Dec  2 11:18 tcpclient
+-rw-rw-r-- 1 mstout mstout  5501 Nov 30 16:55 tcpclient.c
+-rwxrwxr-x 1 mstout mstout 13326 Dec  2 11:18 tcpserver
+-rw-rw-r-- 1 mstout mstout  7943 Nov 30 16:55 tcpserver.c
+-rw-rw-r-- 1 mstout mstout  1777 Nov 30 18:13 test1.txt
+-rw-rw-r-- 1 mstout mstout  3434 Nov 30 16:55 test2.txt
+-rwxrwxr-x 1 mstout mstout 13614 Dec  2 11:18 udpclient
+-rw-rw-r-- 1 mstout mstout  7562 Dec  2 11:17 udpclient.c
+-rwxrwxr-x 1 mstout mstout 13678 Dec  2 11:18 udpserver
+-rw-rw-r-- 1 mstout mstout  6405 Dec  2 11:17 udpserver.c
+mstout@cisc450:~/networks$ ./udpserver [K[K[K[K[K[K[Kclient [K[K[K[K[K[K[K[K[K[K[K[Kcat tes2[Kt2.txt 
 \begin{center}
 {\bf PROGRAMMING PROJECT 2\\ }
 \end{center}
@@ -123,1594 +106,202 @@ $n$ = 5.
 $n$ = 5.
 \item Packet and ACK loss rates 0, Timeout value $n$ = 3.
 \end{itemize}
-
-brivamc@cisc450:~/proj2$ ./udpclient 
-Enter hostname of server: cisc450
-Enter port number for server: 65111
-Enter timeout value between 1 and 10: 3
-getting new line....
-\begin{center}
-
-Data is: \begin{center}
-
-Count is: 14
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 14 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \begin{cen
-bytes_recd: 18
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-{\bf PROGRAMMING PROJECT 2\\ }
-
-Data is: {\bf PROGRAMMING PROJECT 2\\ }
-
-Count is: 30
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 30 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: {\bf PROGRAMMING PROJECT 2
-bytes_recd: 34
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-\end{center}
-
-Data is: \end{center}
-
-Count is: 12
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 12 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{cenGRAMMING PROJECT 2
-bytes_recd: 16
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{cenGRAMMING PROJECT 2
-bytes_recd: 16
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{cenGRAMMING PROJECT 2
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-%\vspace{0.3in}
-
-Data is: %\vspace{0.3in}
-
-Count is: 15
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 15 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: %\vspace{0.MMING PROJECT 2
-bytes_recd: 19
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-\noindent
-
-Data is: \noindent
-
-Count is: 9
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 9 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \noinace{0.MMING PROJECT 2
-bytes_recd: 13
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \noinace{0.MMING PROJECT 2
-bytes_recd: 13
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: \noinace{0.MMING PROJECT 2
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-In this project, you will implement the Stop-and-Wait protocol to 
-
-Data is: In this project, you will implement the Stop-and-Wait protocol to 
-
-Count is: 66
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 66 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: In this project, you will implement the Stop-and-Wait protocol
-bytes_recd: 70
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-transmit data from a Sender to a Receiver
-
-Data is: transmit data from a Sender to a Receiver
-
-Count is: 41
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 41 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: transmit data from a Sender to a Recehe Stop-and-Wait protocol
-bytes_recd: 45
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-in the presence of errors and packet loss. The protocol will be 
-
-Data is: in the presence of errors and packet loss. The protocol will be 
-
-Count is: 64
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 64 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: in the presence of errors and packet loss. The protocol willol
-bytes_recd: 68
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-unidirectional in which data is sent in one
-
-Data is: unidirectional in which data is sent in one
-
-Count is: 43
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 43 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: unidirectional in which data is sent inss. The protocol willol
-bytes_recd: 47
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-direction only with acknowledgments being sent in the reverse direction. 
-
-Data is: direction only with acknowledgments being sent in the reverse direction. 
-
-Count is: 73
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 73 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: direction only with acknowledgments being sent in the reverse directiô:Éˇ
-bytes_recd: 77
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-Only positive ACKs are used. The
-
-Data is: Only positive ACKs are used. The
-
-Count is: 32
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 32 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: Only positive ACKs are used.dgments being sent in the reverse directiô:Éˇ
-bytes_recd: 36
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-transmission of packets and ACKs will be done over UDP 
-
-Data is: transmission of packets and ACKs will be done over UDP 
-
-Count is: 55
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 55 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: transmission of packets and ACKs will be done over he reverse directiô:Éˇ
-bytes_recd: 59
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-(that represents an unreliable network layer
-
-Data is: (that represents an unreliable network layer
-
-Count is: 44
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 44 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: (that represents an unreliable network l done over he reverse directiô:Éˇ
-bytes_recd: 48
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-channel) using fixed UDP ports.
-
-Data is: channel) using fixed UDP ports.
-
-Count is: 31
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 31 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: channel) using fixed UDP poble network l done over he reverse directiô:Éˇ
-bytes_recd: 35
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: channel) using fixed UDP poble network l done over he reverse directiô:Éˇ
-bytes_recd: 35
-recvPkt seq: 1
-sendPkt seq: 0
-waiting for ack...
-received packet. seq num is: 1
-received data: channel) using fixed UDP poble network l done over he reverse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 0
-Packet 0 retransmitted with 84 data bytes
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: channel) using fixed UDP poble network l done over he reverse directiô:Éˇ
-bytes_recd: 35
-recvPkt seq: 1
-sendPkt seq: 0
-waiting for ack...
-received packet. seq num is: 1
-received data: channel) using fixed UDP poble network l done over he reverse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 0
-Packet 0 retransmitted with 84 data bytes
-getting new line....
-To implement this protocol, you will write two separate
-
-Data is: To implement this protocol, you will write two separate
-
-Count is: 55
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 55 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: To implement this protocol, you will write two sepahe reverse directiô:Éˇ
-bytes_recd: 59
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-programs called {\em Sender} and {\em Receiver} which
-
-Data is: programs called {\em Sender} and {\em Receiver} which
-
-Count is: 53
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 53 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: programs called {\em Sender} and {\em Receiver} wpahe reverse directiô:Éˇ
-bytes_recd: 57
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-represent the actions to be executed by the sending node and
-
-Data is: represent the actions to be executed by the sending node and
-
-Count is: 60
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: represent the actions to be executed by the sending nodeverse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-the receiving node respectively. Both the Sender and the
-
-Data is: the receiving node respectively. Both the Sender and the
-
-Count is: 56
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 56 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: the receiving node respectively. Both the Sender andnodeverse directiô:Éˇ
-bytes_recd: 60
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-Receiver must run on the host {\em cis450.cis.udel.edu},
-
-Data is: Receiver must run on the host {\em cis450.cis.udel.edu},
-
-Count is: 56
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 56 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: Receiver must run on the host {\em cis450.cis.udel.enodeverse directiô:Éˇ
-bytes_recd: 60
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-as you will have to come in to my office
-
-Data is: as you will have to come in to my office
-
-Count is: 40
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 40 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: as you will have to come in to my ofis450.cis.udel.enodeverse directiô:Éˇ
-bytes_recd: 44
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-to give me a demo of your programs. For convenience, 
-
-Data is: to give me a demo of your programs. For convenience, 
-
-Count is: 53
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 53 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: to give me a demo of your programs. For convenienl.enodeverse directiô:Éˇ
-bytes_recd: 57
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-both the hostname and the server port number may
-
-Data is: both the hostname and the server port number may
-
-Count is: 48
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 48 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: both the hostname and the server port numberenienl.enodeverse directiô:Éˇ
-bytes_recd: 52
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-be hardcoded into both the Sender and Receiver, 
-
-Data is: be hardcoded into both the Sender and Receiver, 
-
-Count is: 48
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 48 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: be hardcoded into both the Sender and Receivenienl.enodeverse directiô:Éˇ
-bytes_recd: 52
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-but this should be done in such a way that they should be
-
-Data is: but this should be done in such a way that they should be
-
-Count is: 57
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 57 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: but this should be done in such a way that they shoulodeverse directiô:Éˇ
-bytes_recd: 61
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-easy to change.
-
-Data is: easy to change.
-
-Count is: 15
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 15 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: easy to chaould be done in such a way that they shoulodeverse directiô:Éˇ
-bytes_recd: 19
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: easy to chaould be done in such a way that they shoulodeverse directiô:Éˇ
-bytes_recd: 19
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: easy to chaould be done in such a way that they shoulodeverse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-\begin{verbatim}
-
-Data is: \begin{verbatim}
-
-Count is: 16
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 16 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \begin{verbauld be done in such a way that they shoulodeverse directiô:Éˇ
-bytes_recd: 20
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-    --------------------------------------------------------
-
-Data is:     --------------------------------------------------------
-
-Count is: 60
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data:     ----------------------------------------------------verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-    |                   Count (2 bytes)                    |
-
-Data is:     |                   Count (2 bytes)                    |
-
-Count is: 60
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data:     |                   Count (2 bytes)                 verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-    --------------------------------------------------------
-
-Data is:     --------------------------------------------------------
-
-Count is: 60
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data:     ----------------------------------------------------verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-    |           Packet Sequence Number (2 bytes)           |
-
-Data is:     |           Packet Sequence Number (2 bytes)           |
-
-Count is: 60
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data:     |           Packet Sequence Number (2 bytes)        verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-    --------------------------------------------------------
-
-Data is:     --------------------------------------------------------
-
-Count is: 60
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data:     ----------------------------------------------------verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-    |                 Data (0 - 80 bytes)                  |
-
-Data is:     |                 Data (0 - 80 bytes)                  |
-
-Count is: 60
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data:     |                 Data (0 - 80 bytes)               verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-    --------------------------------------------------------
-
-Data is:     --------------------------------------------------------
-
-Count is: 60
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data:     ----------------------------------------------------verse directiô:Éˇ
-bytes_recd: 64
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-\end{verbatim}
-
-Data is: \end{verbatim}
-
-Count is: 14
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 14 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{verba----------------------------------------------verse directiô:Éˇ
-bytes_recd: 18
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{verba----------------------------------------------verse directiô:Éˇ
-bytes_recd: 18
-recvPkt seq: 1
-sendPkt seq: 0
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{verba----------------------------------------------verse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 0
-Packet 0 retransmitted with 84 data bytes
-getting new line....
-The second field of the header is called the
-
-Data is: The second field of the header is called the
-
-Count is: 44
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 44 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: The second field of the header is called----------------verse directiô:Éˇ
-bytes_recd: 48
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-packet sequence number. Each
-
-Data is: packet sequence number. Each
-
-Count is: 28
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 28 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: packet sequence number. header is called----------------verse directiô:Éˇ
-bytes_recd: 32
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-packet transmitted by the Sender is assigned
-
-Data is: packet transmitted by the Sender is assigned
-
-Count is: 44
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 44 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: packet transmitted by the Sender is assi----------------verse directiô:Éˇ
-bytes_recd: 48
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-a sequence number that alternates between 0 and 1,
-
-Data is: a sequence number that alternates between 0 and 1,
-
-Count is: 50
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 50 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: a sequence number that alternates between 0 an----------verse directiô:Éˇ
-bytes_recd: 54
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-in accordance with the Stop-and-Wait protocol.
-
-Data is: in accordance with the Stop-and-Wait protocol.
-
-Count is: 46
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 46 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: in accordance with the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: 50
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: in accordance with the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: 50
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: in accordance with the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: in accordance with the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: 50
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: in accordance with the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-Output of your program
-
-Data is: Output of your program
-
-Count is: 22
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 22 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: Output of your pro the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: 26
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: Output of your pro the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: 26
-recvPkt seq: 1
-sendPkt seq: 0
-waiting for ack...
-received packet. seq num is: 1
-received data: Output of your pro the Stop-and-Wait proto0 an----------verse directiô:Éˇ
-bytes_recd: -1
-Timeout expired for packet numbered 0
-Packet 0 retransmitted with 84 data bytes
-getting new line....
-At specific places in both your Sender and Receiver programs, you must print 
-
-Data is: At specific places in both your Sender and Receiver programs, you must print 
-
-Count is: 77
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 77 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: At specific places in both your Sender and Receiver programs, you must pr
-bytes_recd: 81
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-out specific messages.
-
-Data is: out specific messages.
-
-Count is: 22
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 22 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: out specific messa in both your Sender and Receiver programs, you must pr
-bytes_recd: 26
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-The symbol ‚Äún‚Äù below refers to the sequence number of the transmitted or re
-Data is: The symbol ‚Äún‚Äù below refers to the sequence number of the transmitted or re
-Count is: 78
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 78 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: The symbol ‚Äún‚Äù below refers to the sequence number of the transmitted 
-bytes_recd: 82
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-ceiv
-
-Data is: ceiv
-
-Count is: 4
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 4 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: The symbol ‚Äún‚Äù below refers to the sequence number of the transmitted 
-bytes_recd: 8
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-0 or 1), and the symbol ‚Äúc‚Äù below refers to the count (number of data bytes
-Data is: 0 or 1), and the symbol ‚Äúc‚Äù below refers to the count (number of data bytes
-Count is: 78
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 78 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: 0 or 1), and the symbol ‚Äúc‚Äù below refers to the count (number of data 
-bytes_recd: 82
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-) in
-
-Data is: ) in
-
-Count is: 4
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 4 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: 0 or 1), and the symbol ‚Äúc‚Äù below refers to the count (number of data 
-bytes_recd: 8
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
- the transmitted or
-
-Data is:  the transmitted or
-
-Count is: 19
-SeqNum is: 0
-size of data is: 80
+mstout@cisc450:~/networks$ ./udpclient 
+Enter hostname of server: cisc540   450
+Enter port number for server: 65115
+Enter filename to use as input: test2	.txt
+Enter timeout value between 1 and 10: 5
 Packet 0 transmitted with 19 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data:  the transmittee symbol ‚Äúc‚Äù below refers to the count (number of data 
-bytes_recd: 23
-recvPkt seq: 0
-sendPkt seq: 0
 ACK 0 received
-getting new line....
-received packet.
-
-Data is: received packet.
-
-Count is: 16
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 16 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: received pacttee symbol ‚Äúc‚Äù below refers to the count (number of data 
-bytes_recd: 20
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 35 data bytes
 ACK 1 received
-getting new line....
-The messages to be printed by the Sender are:
-
-Data is: The messages to be printed by the Sender are:
-
-Count is: 45
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 45 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: The messages to be printed by the Sender ers to the count (number of data 
-bytes_recd: 49
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 17 data bytes
 ACK 0 received
-getting new line....
-When a new data packet numbered n is sent by the Sender:
-
-Data is: When a new data packet numbered n is sent by the Sender:
-
-Count is: 56
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 56 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: When a new data packet numbered n is sent by the Sencount (number of data 
-bytes_recd: 60
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 5 data bytes
 ACK 1 received
-getting new line....
-Packet n transmitted with c data bytes
-
-Data is: Packet n transmitted with c data bytes
-
-Count is: 38
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 38 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: Packet n transmitted with c data bis sent by the Sencount (number of data 
-bytes_recd: 42
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 20 data bytes
 ACK 0 received
-getting new line....
-When a data packet numbered n is retransmitted by the Sender:
-
-Data is: When a data packet numbered n is retransmitted by the Sender:
-
-Count is: 61
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 61 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: When a data packet numbered n is retransmitted by the Sen (number of data 
-bytes_recd: 65
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-Packet n retransmitted with c data bytes
-
-Data is: Packet n retransmitted with c data bytes
-
-Count is: 40
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 40 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: Packet n retransmitted with c data bransmitted by the Sen (number of data 
-bytes_recd: 44
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-When a timeout expires:
-
-Data is: When a timeout expires:
-
-Count is: 23
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 23 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: When a timeout expited with c data bransmitted by the Sen (number of data 
-bytes_recd: 27
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-Timeout expired for packet numbered n
-
-Data is: Timeout expired for packet numbered n
-
-Count is: 37
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 37 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: Timeout expired for packet numbera bransmitted by the Sen (number of data 
-bytes_recd: 41
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-When an ACK is received with number n:
-
-Data is: When an ACK is received with number n:
-
-Count is: 38
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 38 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: When an ACK is received with numbe bransmitted by the Sen (number of data 
-bytes_recd: 42
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-ACK n received
-
-Data is: ACK n received
-
-Count is: 14
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 14 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: ACK n receK is received with numbe bransmitted by the Sen (number of data 
-bytes_recd: 18
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-When the ‚ÄúEnd of Transmission‚Äù packet is sent:
-
-Data is: When the ‚ÄúEnd of Transmission‚Äù packet is sent:
-
-Count is: 50
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 50 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: When the ‚ÄúEnd of Transmission‚Äù packet is s by the Sen (number of data 
-bytes_recd: 54
-recvPkt seq: 1
-sendPkt seq: 1
-ACK 1 received
-getting new line....
-End of Transmission Packet with sequence number n transmitted with c data bytes
-Data is: End of Transmission Packet with sequence number n transmitted with c data bytes
-Count is: 78
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 78 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: End of Transmission Packet with sequence number n transmitted with c data 
-bytes_recd: 82
-recvPkt seq: 0
-sendPkt seq: 0
-ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: End of Transmission Packet with sequence number n transmitted with c data 
-bytes_recd: 82
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: End of Transmission Packet with sequence number n transmitted with c data 
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: End of Transmission Packet with sequence number n transmitted with c data 
-bytes_recd: 82
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: End of Transmission Packet with sequence number n transmitted with c data 
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-\begin{center}
-
-Data is: \begin{center}
-
-Count is: 14
-SeqNum is: 1
-size of data is: 80
 Packet 1 transmitted with 14 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \begin{cennsmission Packet with sequence number n transmitted with c data 
-bytes_recd: 18
-recvPkt seq: 1
-sendPkt seq: 1
 ACK 1 received
-getting new line....
-{\bf Testing}
-
-Data is: {\bf Testing}
-
-Count is: 13
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 13 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: {\bf Testnnsmission Packet with sequence number n transmitted with c data 
-bytes_recd: 17
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 5 data bytes
 ACK 0 received
-getting new line....
-\end{center}
-
-Data is: \end{center}
-
-Count is: 12
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 12 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{centnnsmission Packet with sequence number n transmitted with c data 
-bytes_recd: 16
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 71 data bytes
 ACK 1 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{centnnsmission Packet with sequence number n transmitted with c data 
-bytes_recd: 16
-recvPkt seq: 1
-sendPkt seq: 0
-waiting for ack...
-received packet. seq num is: 1
-received data: \end{centnnsmission Packet with sequence number n transmitted with c data 
-bytes_recd: -1
-Timeout expired for packet numbered 0
-Packet 0 retransmitted with 84 data bytes
-getting new line....
-The files {\em test1.txt} and {\em test2.txt} in the directory
-
-Data is: The files {\em test1.txt} and {\em test2.txt} in the directory
-
-Count is: 62
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 62 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: The files {\em test1.txt} and {\em test2.txt} in the directed with c data 
-bytes_recd: 66
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 46 data bytes
 ACK 0 received
-getting new line....
-{\em /usa/sethi/networks/proj2} on {\em cis450.cis.udel.edu}
-
-Data is: {\em /usa/sethi/networks/proj2} on {\em cis450.cis.udel.edu}
-
-Count is: 60
-SeqNum is: 1
-size of data is: 80
+Packet 1 transmitted with 69 data bytes
+ACK 1 received
+Packet 0 transmitted with 48 data bytes
+ACK 0 received
+Packet 1 transmitted with 78 data bytes
+ACK 1 received
+Packet 0 transmitted with 37 data bytes
+ACK 0 received
 Packet 1 transmitted with 60 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: {\em /usa/sethi/networks/proj2} on {\em cis450.cis.udel.ected with c data 
-bytes_recd: 64
-recvPkt seq: 1
-sendPkt seq: 1
 ACK 1 received
-getting new line....
-are sample input files that may
-
-Data is: are sample input files that may
-
-Count is: 31
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 31 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: are sample input files thatoj2} on {\em cis450.cis.udel.ected with c data 
-bytes_recd: 35
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 49 data bytes
 ACK 0 received
-getting new line....
-be used by you to test your programs.
-
-Data is: be used by you to test your programs.
-
-Count is: 37
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 37 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: be used by you to test your progrn {\em cis450.cis.udel.ected with c data 
-bytes_recd: 41
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 36 data bytes
 ACK 1 received
-getting new line....
-It is strongly suggested that you first use {\em test1.txt} for
-
-Data is: It is strongly suggested that you first use {\em test1.txt} for
-
-Count is: 63
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 63 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: It is strongly suggested that you first use {\em test1.txt}ed with c data 
-bytes_recd: 67
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 5 data bytes
 ACK 0 received
-getting new line....
-all your testing, and only if you have thoroughly debugged your
-
-Data is: all your testing, and only if you have thoroughly debugged your
-
-Count is: 63
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 63 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: all your testing, and only if you have thoroughly debugged ed with c data 
-bytes_recd: 67
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 5 data bytes
 ACK 1 received
-getting new line....
-programs, then proceed with using {\em test2.txt} for further testing.
-
-Data is: programs, then proceed with using {\em test2.txt} for further testing.
-
-Count is: 70
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 70 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: programs, then proceed with using {\em test2.txt} for further test c data 
-bytes_recd: 74
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 60 data bytes
 ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: programs, then proceed with using {\em test2.txt} for further test c data 
-bytes_recd: 74
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: programs, then proceed with using {\em test2.txt} for further test c data 
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-It is also suggested that you test your programs in phases using
-
-Data is: It is also suggested that you test your programs in phases using
-
-Count is: 64
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 64 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: It is also suggested that you test your programs in phases ur test c data 
-bytes_recd: 68
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 58 data bytes
 ACK 1 received
-getting new line....
-the following configuration parameter values:
-
-Data is: the following configuration parameter values:
-
-Count is: 45
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 45 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: the following configuration parameter valrograms in phases ur test c data 
-bytes_recd: 49
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 65 data bytes
 ACK 0 received
-getting new line....
-
-
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: the following configuration parameter valrograms in phases ur test c data 
-bytes_recd: 49
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: the following configuration parameter valrograms in phases ur test c data 
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-getting new line....
-\begin{itemize}
-
-Data is: \begin{itemize}
-
-Count is: 15
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 15 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \begin{itemng configuration parameter valrograms in phases ur test c data 
-bytes_recd: 19
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 61 data bytes
 ACK 1 received
-getting new line....
-\item Packet and ACK loss rates 0, Timeout value $n$  = 5.
-
-Data is: \item Packet and ACK loss rates 0, Timeout value $n$  = 5.
-
-Count is: 58
-SeqNum is: 0
-size of data is: 80
+Packet 0 transmitted with 61 data bytes
+ACK 0 received
+Packet 1 transmitted with 45 data bytes
+ACK 1 received
 Packet 0 transmitted with 58 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \item Packet and ACK loss rates 0, Timeout value $n$  ases ur test c data 
-bytes_recd: 62
-recvPkt seq: 0
-sendPkt seq: 0
 ACK 0 received
-getting new line....
-\item Packet loss rate 0.2, ACK loss rate 0, Timeout value
-
-Data is: \item Packet loss rate 0.2, ACK loss rate 0, Timeout value
-
-Count is: 58
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 58 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \item Packet loss rate 0.2, ACK loss rate 0, Timeout vases ur test c data 
-bytes_recd: 62
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 53 data bytes
 ACK 1 received
-getting new line....
-$n$ = 5.
-
-Data is: $n$ = 5.
-
-Count is: 8
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 8 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: $n$ m Packet loss rate 0.2, ACK loss rate 0, Timeout vases ur test c data 
-bytes_recd: 12
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 53 data bytes
 ACK 0 received
-getting new line....
-\item Packet loss rate 0, ACK loss rate 0.2, Timeout value
-
-Data is: \item Packet loss rate 0, ACK loss rate 0.2, Timeout value
-
-Count is: 58
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 58 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \item Packet loss rate 0, ACK loss rate 0.2, Timeout vases ur test c data 
-bytes_recd: 62
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 62 data bytes
 ACK 1 received
-getting new line....
-$n$ = 5.
-
-Data is: $n$ = 5.
-
-Count is: 8
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 8 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: $n$ m Packet loss rate 0, ACK loss rate 0.2, Timeout vases ur test c data 
-bytes_recd: 12
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 20 data bytes
 ACK 0 received
-getting new line....
-\item Packet and ACK loss rates 0, Timeout value $n$ = 3.
-
-Data is: \item Packet and ACK loss rates 0, Timeout value $n$ = 3.
-
-Count is: 57
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 57 data bytes
-waiting for ack...
-received packet. seq num is: 1
-received data: \item Packet and ACK loss rates 0, Timeout value $n$ vases ur test c data 
-bytes_recd: 61
-recvPkt seq: 1
-sendPkt seq: 1
+Packet 1 transmitted with 5 data bytes
 ACK 1 received
-getting new line....
-\end{itemize}
-
-Data is: \end{itemize}
-
-Count is: 13
-SeqNum is: 0
-size of data is: 80
-Packet 0 transmitted with 13 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{itemket and ACK loss rates 0, Timeout value $n$ vases ur test c data 
-bytes_recd: 17
-recvPkt seq: 0
-sendPkt seq: 0
+Packet 0 transmitted with 21 data bytes
 ACK 0 received
-getting new line....
+Packet 1 transmitted with 65 data bytes
+ACK 1 received
+Packet 0 transmitted with 65 data bytes
+ACK 0 received
+Packet 1 transmitted with 65 data bytes
+ACK 1 received
+Packet 0 transmitted with 65 data bytes
+ACK 0 received
+Packet 1 transmitted with 65 data bytes
+ACK 1 received
+Packet 0 transmitted with 65 data bytes
+ACK 0 received
+Packet 1 transmitted with 65 data bytes
+ACK 1 received
+Packet 0 transmitted with 19 data bytes
+ACK 0 received
+Packet 1 transmitted with 5 data bytes
+ACK 1 received
+Packet 0 transmitted with 49 data bytes
+ACK 0 received
+Packet 1 transmitted with 33 data bytes
+ACK 1 received
+Packet 0 transmitted with 49 data bytes
+ACK 0 received
+Packet 1 transmitted with 55 data bytes
+ACK 1 received
+Packet 0 transmitted with 51 data bytes
+ACK 0 received
+Packet 1 transmitted with 5 data bytes
+ACK 1 received
+Packet 0 transmitted with 5 data bytes
+ACK 0 received
+Packet 1 transmitted with 27 data bytes
+ACK 1 received
+Packet 0 transmitted with 5 data bytes
+ACK 0 received
+Packet 1 transmitted with 82 data bytes
+ACK 1 received
+Packet 0 transmitted with 27 data bytes
+ACK 0 received
+Packet 1 transmitted with 88 data bytes
+ACK 1 received
+Packet 0 transmitted with 88 data bytes
+ACK 0 received
+Packet 1 transmitted with 24 data bytes
+ACK 1 received
+Packet 0 transmitted with 21 data bytes
+ACK 0 received
+Packet 1 transmitted with 50 data bytes
+ACK 1 received
+Packet 0 transmitted with 61 data bytes
+ACK 0 received
+Packet 1 transmitted with 43 data bytes
+ACK 1 received
+Packet 0 transmitted with 66 data bytes
+ACK 0 received
+Packet 1 transmitted with 45 data bytes
+ACK 1 received
+Packet 0 transmitted with 28 data bytes
+ACK 0 received
+Packet 1 transmitted with 42 data bytes
+ACK 1 received
+Packet 0 transmitted with 43 data bytes
+ACK 0 received
+Packet 1 transmitted with 19 data bytes
+ACK 1 received
+Packet 0 transmitted with 55 data bytes
+ACK 0 received
+Packet 1 transmitted with 84 data bytes
+ACK 1 received
+Packet 0 transmitted with 5 data bytes
+ACK 0 received
+Packet 1 transmitted with 19 data bytes
+ACK 1 received
+Packet 0 transmitted with 18 data bytes
+ACK 0 received
+Packet 1 transmitted with 17 data bytes
+ACK 1 received
+Packet 0 transmitted with 5 data bytes
+ACK 0 received
+Packet 1 transmitted with 67 data bytes
+ACK 1 received
+Packet 0 transmitted with 65 data bytes
+ACK 0 received
+Packet 1 transmitted with 36 data bytes
+ACK 1 received
+Packet 0 transmitted with 42 data bytes
+ACK 0 received
+Packet 1 transmitted with 68 data bytes
+ACK 1 received
+Packet 0 transmitted with 68 data bytes
+ACK 0 received
+Packet 1 transmitted with 75 data bytes
+ACK 1 received
+Packet 0 transmitted with 5 data bytes
+ACK 0 received
+Packet 1 transmitted with 69 data bytes
+ACK 1 received
+Packet 0 transmitted with 50 data bytes
+ACK 0 received
+Packet 1 transmitted with 5 data bytes
+ACK 1 received
+Packet 0 transmitted with 20 data bytes
+ACK 0 received
+Packet 1 transmitted with 63 data bytes
+ACK 1 received
+Packet 0 transmitted with 63 data bytes
+ACK 0 received
+Packet 1 transmitted with 13 data bytes
+ACK 1 received
+Packet 0 transmitted with 63 data bytes
+ACK 0 received
+Packet 1 transmitted with 13 data bytes
+ACK 1 received
+Packet 0 transmitted with 62 data bytes
+ACK 0 received
+Packet 1 transmitted with 18 data bytes
+ACK 1 received
 
+End of Transmission Packet with sequence number 0 transmitted with 0 data bytes
 
-Data is: 
-
-Count is: 0
-SeqNum is: 1
-size of data is: 80
-Packet 1 transmitted with 0 data bytes
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{itemket and ACK loss rates 0, Timeout value $n$ vases ur test c data 
-bytes_recd: 17
-recvPkt seq: 0
-sendPkt seq: 1
-waiting for ack...
-received packet. seq num is: 0
-received data: \end{itemket and ACK loss rates 0, Timeout value $n$ vases ur test c data 
-bytes_recd: -1
-Timeout expired for packet numbered 1
-Packet 1 retransmitted with 84 data bytes
-End of Transmission Packet with sequence number 1 transmitted with 0 data bytes 
-Number of data packets transmitted (initial transmit only): 94 
-Total number of data bytes transmitted: 3341 
+Number of data packets transmitted (initial transmit only): 90 
+Total number of data bytes transmitted: 3434 
 Total number of retransmissions: 0 
-Total number of data packets received: 94 
-Number of ACKs received: 94 
-Count of how many timeouts occurred: 15 
-brivamc@cisc450:~/proj2$ exit[K[K[K[K:(([K
-bash: syntax error near unexpected token `newline'
-brivamc@cisc450:~/proj2$ exit
+Total number of data packets received: 90 
+Number of ACKs received: 90 
+Count of how many timeouts occurred: 0 
+mstout@cisc450:~/networks$ diff output.txt tes2[Kt2.txt 
+mstout@cisc450:~/networks$ exit
 exit
 
-Script done on Wed 28 Nov 2018 10:52:00 PM EST
+Script done on Sun 02 Dec 2018 11:21:18 AM EST

@@ -43,3 +43,48 @@ packet sequence number. Each
 packet transmitted by the Sender is assigned
 a sequence number that alternates between 0 and 1,
 in accordance with the Stop-and-Wait protocol.
+
+
+Output of your program
+
+At specific places in both your Sender and Receiver programs, you must print 
+out specific messages.
+The symbol “n” below refers to the sequence number of the transmitted or receiv
+0 or 1), and the symbol “c” below refers to the count (number of data bytes) in
+ the transmitted or
+received packet.
+The messages to be printed by the Sender are:
+When a new data packet numbered n is sent by the Sender:
+Packet n transmitted with c data bytes
+When a data packet numbered n is retransmitted by the Sender:
+Packet n retransmitted with c data bytes
+When a timeout expires:
+Timeout expired for packet numbered n
+When an ACK is received with number n:
+ACK n received
+When the “End of Transmission” packet is sent:
+End of Transmission Packet with sequence number n transmitted with c data bytes
+
+\begin{center}
+{\bf Testing}
+\end{center}
+
+The files {\em test1.txt} and {\em test2.txt} in the directory
+{\em /usa/sethi/networks/proj2} on {\em cis450.cis.udel.edu}
+are sample input files that may
+be used by you to test your programs.
+It is strongly suggested that you first use {\em test1.txt} for
+all your testing, and only if you have thoroughly debugged your
+programs, then proceed with using {\em test2.txt} for further testing.
+
+It is also suggested that you test your programs in phases using
+the following configuration parameter values:
+
+\begin{itemize}
+\item Packet and ACK loss rates 0, Timeout value $n$  = 5.
+\item Packet loss rate 0.2, ACK loss rate 0, Timeout value
+$n$ = 5.
+\item Packet loss rate 0, ACK loss rate 0.2, Timeout value
+$n$ = 5.
+\item Packet and ACK loss rates 0, Timeout value $n$ = 3.
+\end{itemize}
