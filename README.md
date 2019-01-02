@@ -1,4 +1,4 @@
-# UDP-server
+# Server Simulations
 Simulated servers, both UDP and TCP.
 
 TCP server used as a banking transaction simulator, used for withdrawals and deposits.
